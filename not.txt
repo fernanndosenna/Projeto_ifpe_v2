@@ -1,0 +1,19 @@
+INSTALAÇOES
+npm init
+npm install express --save
+npm install ejs --save
+npm install body-parser --save
+npm install --save sequelize
+npm install --save mysql2
+
+
+Tecnologias usadas:
+mysql - EJS - NodeJS - express
+
+o EJS irá desenhar o html em qualquer ponto
+da aplicaçao, é uma template engine de renderizacao
+
+O body parser vai ser responsável para pegar os dados do formulario na rota  e traduzir esses dados
+
+Bibliotec Sequelize - manipular banco de dados SQL, através de codigos javascript para
+da para manipular os dados sem precisar de códigos SQL para isso.

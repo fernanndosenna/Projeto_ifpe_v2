@@ -1,0 +1,5 @@
+arquivo database.js é onde fica a conexao 
+com o sequelize
+
+o arquivo pergunta.js é um model onde vai a
+sefinir a tabela do banco de dados

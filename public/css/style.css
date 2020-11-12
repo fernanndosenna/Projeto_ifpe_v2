@@ -1,0 +1,33 @@
+body{
+    background-color:rgb(37, 37, 37);
+    
+}
+#formulario-pergunta{
+    margin-top: 5vh;
+}
+div.container h1{
+    color: white;
+}
+div.container p{
+    color: white;
+}
+div.container h3{
+    color: white;
+}
+div.container span p{
+    color: black;
+}
+div.container hr{
+    background: white;
+}
+div.container{
+    width: 900px;
+}
+
+/*estilos do formulario de realizar pergunta*/
+div.card-header h1{
+    color: black;
+}
+#pergunta-tela-principal{
+    color: black;
+}
