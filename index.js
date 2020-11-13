@@ -21,12 +21,17 @@ app.use(express.static('public'));
 //body-parser
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
+
 //***********ROTAS**************** */
-app.get('/',(req,res)=>{//rota principal recebendo os dados do banco para lista-las
+app.get("/",(req,res)=>{
+    res.render("index")
+})
+
+app.get('/suporte',(req,res)=>{//rota principal recebendo os dados do banco para lista-las
     Pergunta.findAll({raw: true, order:[
         ['id', 'DESC']        
     ]}).then((perguntas)=>{
-        res.render('index',{
+        res.render('index2',{
             perguntas: perguntas
         });
     })
