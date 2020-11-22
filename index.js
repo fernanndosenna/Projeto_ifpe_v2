@@ -5,6 +5,8 @@ const connection = require('./database/database');
 const Pergunta = require('./database/Pergunta')//tabela de pergunta
 //Database
 const Resposta = require("./database/Resposta")
+const Contato = require("./database/contato")
+
 
 connection.authenticate()
            .then(()=>{
@@ -14,6 +16,7 @@ connection.authenticate()
                 console.log(msgErro)
            })  
 //******configuraçoes**********//
+
 //ejs estou dizendo para o express usar o EJS como view enginer
 app.set('view engine', 'ejs');
 //arquivos estaticos
@@ -37,6 +40,11 @@ app.get('/suporte',(req,res)=>{//rota principal recebendo os dados do banco para
     })
 });
 
+app.get('/contato', (req,res)=>{ //rota de contato
+    res.render('contato')
+})
+
+
 app.get('/perguntar', (req,res)=>{
     res.render('perguntar');
 })
@@ -48,7 +56,7 @@ app.post("/salvarpergunta",(req,res)=>{//receber dados do formulario
         titulo: titulo,
         descricao: descricao
     }).then(()=>{
-        res.redirect('/');
+        res.redirect('/suporte');
     })
 });
 
@@ -86,6 +94,29 @@ app.post("/responder", (req,res)=>{ //receber as respostas do formulario sincron
         perguntaId: perguntaId
     }).then(()=>{
         res.redirect("/pergunta/" + perguntaId);
+    })
+})
+app.post("/salvarcontato", (req,res)=>{ //receber dados do formulario de contato
+    var PrimeiroNome = req.body.Pnome;
+    var UltimoNome = req.body.Unome;
+    var Cidade = req.body.Cidade;
+    var Estado = req.body.Estado;
+    var CEP = req.body.CEP;
+    var Email = req.body.Email;
+    var Mensagem = req.body.Mensagem;
+    Contato.create({
+        PrimeiroNome: PrimeiroNome,
+        UltimoNome: UltimoNome,
+        Cidade: Cidade,
+        Estado: Estado,
+        CEP: CEP,
+        Email: Email,
+        Mensagem:Mensagem        
+        
+    }).then(()=>{
+        res.send("Seus dados e mensagens ja foram enviadas, aguarde o nosso retorno!")        
+    }).catch((err)=>{
+        console.log(err)
     })
 })
 

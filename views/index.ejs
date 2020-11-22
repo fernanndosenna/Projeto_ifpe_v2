@@ -3,100 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luven Tecnologia</title>
-    <link rel="stylesheet" href="css/styleRaiz.css">
-    <!--Font awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <title>Adamantos</title>
+    <link rel="stylesheet" href="css/style.css">
+        <!--Font awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
-
-    <!--bootstrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        
+       <!--bootstrap-->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="page">
-        <div id="container-header">
+    <div id="estrutura">
+        <!--Cabecalho-->
+        <header id="header">
+           <img  id="logo" src="img/logoOrigen6.png" alt="logo">
+      
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/suporte">Suporte</a></li>
+                    <li><a href="#">Galeria</a></li>
+                    <li><a href="#">Quem somos?</a></li>
+                </ul>
+            </nav>
+            <hgroup>
+              <h1 >Adamantos</h1>
+              <h2 >Desenvolvemos tecnologias de alta qualidade e desempenho</h2>
+            </hgroup>
+
+        </header>
+
+        <!--Primeiro conteudo de apresentacao em 3 colunas desktop-->
+        <section id="apresentacao">
             
-            <div id="logo">
-                <img src="img/logo.png" alt="">
-                <hgroup>
-                    <h1>Luven Tecnologia</h1>
-                    <h2>Desenvolvemos tecnologias de alta qualidade e desempenho</h2>
-                </hgroup>
-               
-            </div>
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="/suporte">Suporte</a></li>
-                        <li><a href="#">Galeria</a></li>
-
-                    </ul>
-                </nav>
-            </header>
-            
-        </div>
-
-        <div id="content" class="conteudo-parallax-inicial">
-           <aside>
-
-           </aside>
-            <main >
+            <div id="apresentacao1">
               
+                  <h1 >Nosso objetivo vai além</h1>
+                  <p >
+                    Nos vemos como um parceiro estratégico pois a nossa missão é co-criar produtos digitais de sucesso
+                    que realmente resolvam problemas do mundo real.
+                    Fazemos isso com dedicação e amor na realização do seu sonho!
+                  </p>
+            
 
+            </div>
+
+            <div id="apresentacao2" >
                 <h1>Somos a maior empresa de software do Mundo</h1>
-                <p>Trabalhe conosco, aqui você terá oportunidades de crescer e evoluir com as pessoas mais inteligentes do mundo</p>
-
-                <p>Há mais de 17 anos Especializada em Diversas Linguagens, Metodologias e Muito Mais. Desenvolvemos seu Projeto com a mais Alta Tecnlogia. Solicite seu Orçamento Agora! Alocação de Times Ágeis. Software Web e Mobile. Transformação Digital. Desenvolvimento Agile. Serviços: Softwares sob Demanda, Apps Mobile, E-Commerce, Refactoring.</p>
-
-            </main>
-            <div id="anuncios">
-
+                <p>Trabalhe conosco, aqui você terá oportunidades de crescer e evoluir com as pessoas mais inteligentes do mundo
+                    Há mais de 17 anos Especializada em Diversas Linguagens, Metodologias e Muito Mais. Desenvolvemos seu Projeto com a mais Alta Tecnlogia. Solicite seu Orçamento Agora! Alocação de Times Ágeis. Software Web e Mobile. Transformação Digital. Desenvolvimento Agile. Serviços: Softwares sob Demanda, Apps Mobile, E-Commerce, Refactoring.
+                </p>
             </div>
-        </div>
-        <!--Servicos-->
-        <div id="servicos">
-            <div id="homem-ofertas">
-                <img src="img/homem.fw_.png" alt="">
-                <span>Servicos de qualidade</span>
+
+            <div id="apresentacao3" >
+                <img src="img/world.png" alt="mundo">
+            </div> 
+        </section>
+
+                <!-- servicos-->
+        <section id="servicos">
+          <span id="sumirMobile">
+            <h3 class="passjquery">Servicos de qualidade</h3>
+         
+           <img src="img/homem.fw_.png" alt="homem" class="passjquery">
+          </span>
+       
+
+            <div id="servicos-imagem" class="passjquery">
+                <img src="img/servico1.jpg" alt="servico1">
+                <img src="img/servico2.jpg" alt="servico2">
+                <img src="img/servico3.jpg" alt="servico3">
+                <img src="img/servico4.jpg" alt="servico4">
             </div>
-            <div id="fotos-servicos">
-                <div id="servico1" class="img-servicos">
-                    <img  src="img/servico1.jpg" alt="">
-                </div>
-                <div id="servico2" class="img-servicos" >
-                    <img  src="img/servico2.jpg" alt="">
 
-                </div>
-                <div id="servico3"  class="img-servicos" >
-                    <img src="img/servico3.jpg" alt="">
-
-                </div>
-                <div id="servico4" class="img-servicos" >
-                    <img  src="img/servico4.jpg" alt="">
-
-                </div>
+            <div id="servicos-texto" class="passjquery">
+                <h1>Transformamos idéias em realidade</h1>
+                <p>Somos uma Fábrica de Software, nascida na era da cultura digital, com foco em criar soluções únicas e moldadas à necessidade de cada cliente. Possuímos skills que nos tornam capazes de iniciar projetos do zero, desde a concepção do produto até a solução final e completa de software full-stack. Ou seja, entendemos o problema de negócio, o traduzimos em uma visão mínima viável da ideia proposta e a tornamos visual com um time de Design especializado em UX e UI, posteriormente nossos Squads de desenvolvimento de softwares transformam isso em uma solução funcional e viável dentro de um tempo possível, sem esquecer da qualidade.
+                </p>
             </div>
-            <div id="texto-servicos">
-                <h3>Transformamos idéias em realidade</h3>
-                <p>Somos uma Fábrica de Software, nascida na era da cultura digital, com foco em criar soluções únicas e moldadas à necessidade de cada cliente.
-                    Possuímos skills que nos tornam capazes de iniciar projetos do zero, desde a concepção do produto até a solução final e completa de software full-stack. Ou seja, entendemos o problema de negócio, o traduzimos em uma visão mínima viável da ideia proposta e a tornamos visual com um time de Design especializado em UX e UI, posteriormente nossos Squads de desenvolvimento de softwares transformam isso em uma solução funcional e viável dentro de um tempo possível, sem esquecer da qualidade.</p>
-                    
-            </div>
-            
+        </section>
 
-            
+        <div id="parallax"></div>
 
-
-        </div>
-
-        <div class="conteudo-parallax"></div>
-
-        <div id="time">
+        <!--Time-->
+        <div id="time" class="passjquery">
             <h1>Nosso time</h1>
-            <hr>
+            <hr id="hr">
             <div class="row row-cols-1 row-cols-md-4">
                 <div class="col mb-4">
                   <div class="card">
@@ -135,20 +129,36 @@
                   </div>
                 </div>
               </div>
-        </div>
+           
+    </div>
 
-        <footer>
-            <h4>Fique por dentro conosco!</h4>
-            <ul>
-                <li><a href="#"><i class="fab fa-facebook" style="color: rgb(65, 113, 243);"></i></a></li>
+            <!--Footer-->
+            <footer>
+              <h4>Fique por dentro conosco!</h4>
+              <ul>
+                  <li><a href="#"><i class="fab fa-facebook" style="color: rgb(65, 113, 243);"></i></a></li>
+      
+                  <li><a href="#"><i class="fab fa-instagram" style="color: rgba(173, 35, 35, 0.897);"></i></a></li>
+      
+                  <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                  <li><a href="#"><i class="fab fa-youtube" style="color: red;"></i></a></li>
+              </ul>
+              <hr>
+              <span>Desenvolvido pela equipe NodeJS</span>
+          </footer>
 
-                <li><a href="#"><i class="fab fa-instagram" style="color: rgba(173, 35, 35, 0.897);"></i></a></li>
+          <!--Jquery-->
+          <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <!--Javascript arquivo-->
+       <script src="js/script.js"></script>
 
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i class="fab fa-youtube" style="color: red;"></i></a></li>
-            </ul>
-            <hr>
-            <span>Desenvolvido pela equipe NodeJS</span>
-        </footer>
+
 </body>
 </html>
+
+
+
+
+
+
+

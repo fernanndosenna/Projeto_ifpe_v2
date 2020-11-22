@@ -1,33 +1,453 @@
-body{
-    background-color:rgb(37, 37, 37);
-    
+/*RESETE*/
+*{
+    padding: 0;
+    margin: 0;
+    font: 100%;
+    box-sizing: border-box;
 }
-#formulario-pergunta{
-    margin-top: 5vh;
+li{
+    list-style: none;
 }
-div.container h1{
-    color: white;
+a{
+    text-decoration: none;
 }
-div.container p{
-    color: white;
-}
-div.container h3{
-    color: white;
-}
-div.container span p{
-    color: black;
-}
-div.container hr{
-    background: white;
-}
-div.container{
-    width: 900px;
+img{
+    width: 500px;
+    display: block;
+    border: 5px;
 }
 
-/*estilos do formulario de realizar pergunta*/
-div.card-header h1{
-    color: black;
+
+/*GRID GERAL*/
+#estrutura{
+    
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "apresentacao apresentacao apresentacao"
+    "servicos servicos servicos"
+    "parallax parallax parallax"
+    "time time time"
+    "footer footer footer" 
+    ;
 }
-#pergunta-tela-principal{
-    color: black;
+/*Media querie da estrutura geral*/
+@media (max-width: 1200px){
+    #estrutura{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header header"
+        "apresentacao apresentacao"
+        "servicos servicos"
+        "parallax parallax"
+        "time time"
+        "footer footer" 
+        
+        ;
+    }
 }
+@media (max-width: 760px){
+    #estrutura{
+        grid-template-columns: 100%;
+        grid-template-areas:
+        "header"
+        "apresentacao"
+        "servicos"
+        "parallax"
+        "time"
+        "footer" 
+        
+        ;
+    }
+}
+
+/*header*/
+#header{
+    grid-area: header;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    position: relative;
+}
+#logo{
+    animation-name: aparecer;
+    animation-duration: 2s;
+    width:100%;
+    grid-row: 1;
+    align-self: end;
+    background: transparent;
+}
+#header hgroup{
+    position: absolute;
+    right: 100px;
+    top: 200px;
+}
+#header hgroup h1{
+    animation-name: aparecer;
+    animation-duration: 2s;
+    font-size: 3rem;
+    color: rgb(65, 65, 65);
+    font-weight: 700;
+    text-shadow: 1px 5px 5px  rgba(0, 0, 0,0.45);
+}
+#header hgroup h2{
+    font-size: 1.5rem;
+    animation-name: aparecer;
+    animation-duration: 4s;
+    color: rgb(141, 141, 141);
+    margin-left: 30px;
+    text-shadow: 1px 1px 1px  rgba(0, 0, 0,0.45);
+
+}
+#header nav ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+#header nav a{
+    display: block;
+    padding: 20px;
+    color: rgb(110, 110, 110);
+    font-size: 1.7em;
+    transition: 0.1s;
+}
+#header nav ul li{
+    transition:0.1s;
+}
+#header nav a:hover{
+    color: aqua;
+    text-decoration: none;
+}
+#header nav ul li:hover{
+    transform: scale(1.2);
+}
+#header li + li{
+    margin-left: 30px;
+}
+
+@media(max-width:1200px){
+    #header{
+        grid-template-columns: auto;
+    }
+    #logo{
+        margin-bottom: 20px;
+        width: 200px;
+    }
+    #header li + li{
+        margin-left: 10px;
+    }
+    #header hgroup{
+        right: 50px;
+        top: 230px;
+    }
+    #header hgroup h1{
+        font-size: 2rem;
+    }
+    #header hgroup h2{
+        font-size: 0.9rem;
+        max-width: 200px;
+    } 
+    #header nav ul{
+        flex-direction: column;
+    }
+    #header nav ul li{
+        margin: 0;
+        padding: 0;
+    }
+    #header nav ul li a{
+        margin: 0;
+        padding: 0;
+        font-size: 0.8em;
+
+    }
+    #header nav ul li a:hover{
+        transform: scale(0.8);
+    }
+
+}
+
+
+/*APRESENTACAO INICIAL*/
+#apresentacao{
+    grid: apresentacao;
+    padding: 0px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column:1/-1; /*vai pegar as coluna de ponta a ponta*/
+    grid-gap: 50px;
+    background-image: linear-gradient(to right, rgb(22, 22, 22), white, white);
+    align-items: center;
+}
+#apresentacao3{
+    animation-name: aparecer;
+    animation-duration: 3s;
+    background: white;
+}
+#apresentacao3 img{
+    height: 100%;
+}
+
+#apresentacao1{
+    text-align: center;
+    animation-name: aparecer;
+    animation-duration: 3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+#apresentacao1 h1{
+    color: rgb(248, 247, 247);
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 2rem;
+}
+#apresentacao1 p{
+    color: rgb(226, 226, 226);
+    margin-top: 30px;
+    font-size: 1.2rem;
+}
+#apresentacao2 h1{
+    animation-name: aparecer;
+    animation-duration: 3s;
+    color: rgb(53, 53, 53);
+    font-size: 1.8rem;
+    font-weight: 700;
+
+}
+#apresentacao2 p{
+    animation-name: aparecer;
+    animation-duration: 3s;
+    color: rgb(51, 51, 51);
+    font-weight: 600;
+  
+}
+/*Media querie da apresentacao*/
+@media (max-width: 1200px){
+    #apresentacao{
+       padding: 30px;
+        grid-template-columns: 1fr;
+        background-image: linear-gradient(to bottom, rgb(22, 22, 22), white, white);
+    }
+    #apresentacao1 h1{
+        font-size: 1.5rem;
+    }
+    #apresentacao1 p{
+        max-width: 400px;
+        font-size: 1.1rem;
+
+    }
+    #apresentacao2 h1{
+    
+        font-size: 1.5rem;
+    }
+    #apresentacao2 p{
+        max-width: 400px;
+        font-size: 1.1rem;
+    }
+}
+/*SERVICO*/
+#servicos{
+    grid: servicos;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column:1/-1; /*vai pegar as coluna de ponta a ponta*/
+    position: relative;
+
+}
+#servicos h3{
+    position: absolute;
+    left: 230px;
+    top: 70px;
+    font-size: 1.9rem;
+    color: rgb(109, 109, 109);    
+}
+#servicos img{
+    width: 70%;
+}
+#servicos-imagem{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    padding-right: 50px;
+}
+#servicos-imagem img{
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.45);
+    transition:0.5s;
+}
+#servicos-imagem img:hover{
+    transform: scale(1.1);
+}
+#servicos-texto{
+    align-items: center;
+    text-align: center;
+}
+#servicos-texto h1{
+    color: rgb(109, 109, 109);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+#servicos-texto p{
+    color: rgb(109, 109, 109);
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 1px  rgba(0, 0, 0,0.45);
+}
+/*media servicos*/
+@media (max-width: 1200px){
+    #servicos{
+        grid-template-columns: 1fr;
+    }
+    #servicos h3{
+        left: 230px;
+        top: 70px;
+        font-size: 1.1rem;
+     
+    }
+    #servicos img{
+      width:100%;
+    }
+    #servicos-imagem{
+        padding-right: 0;
+    }
+    #servicos-imagem img{
+        max-width: 200px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.45);
+        transition:0.5s;
+    }
+    #sumirMobile{
+        display: none;
+    }
+    #servicos-texto h1{
+        margin-top: 30px;
+        font-size: 1.5rem;
+    }
+    #servicos-texto p{
+        margin-top: 30px;
+        font-size: 1.1rem;
+    }
+
+}
+/*parallax*/
+#parallax{
+    width:100%;
+    height:500px;
+    background: url('../img/imagem-paralax.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-column:1/-1; /*vai pegar as coluna de ponta a ponta*/
+}
+/*media paralax*/
+@media (max-width: 1200px){
+    #parallax{
+        height: 200px;
+    }
+}
+/*TIME*/
+#time{
+    grid-template-columns: 1fr;
+    grid: time;
+    padding: 100px 50px;
+    display: grid;
+    grid-column:1/-1; /*vai pegar as coluna de ponta a ponta*/
+    text-align: center;
+    justify-content: center;
+}
+#time h1{
+    color: rgb(109, 109, 109);
+    font-size: 3rem;
+    font-weight: 700;
+}
+#time #hr{
+    height: 2px;
+    margin-bottom: 80px;
+}
+/*media do time*/
+@media (max-width: 1200px){
+    #time h1{
+        font-size: 2rem;
+    }
+    #time{
+        width: 100%;
+    }
+}
+
+/*footer*/
+footer{
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    grid: footer;
+    grid-column:1/-1; /*vai pegar as coluna de ponta a ponta*/
+    text-align: center;
+    justify-content: center;
+    background: black;
+    align-items: center;
+    padding: 100px 50px;
+}
+footer ul{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+footer ul li{
+    font-size:3rem ;
+
+
+}
+footer ul li  + li{
+    padding-left:50px;
+}
+footer h4{
+    color: rgb(109, 109, 109);
+    margin-bottom: 50px;
+
+}
+footer hr{
+    background: rgb(109, 109, 109);
+    margin-bottom: 50px;
+}
+/*media footer*/
+@media (max-width: 1200px){
+    footer ul li{
+        font-size:2rem;
+    }
+    footer ul li{
+        padding: 5px;
+    }
+    footer h4{
+        font-size: 1.1rem;
+    }
+}
+
+
+/*efeitos de scroll jquery*/
+.passjquery {
+    opacity: 0;
+    transform: translate3d(
+      -100px,
+      0,
+      0
+    ); /*eixox,eixo vertical, e eixo z profundidade*/
+    transition: 0.3s;
+  }
+  
+  .anime-start {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+#logo-suporte{
+    max-width: 50px;
+}
+/*animacao*/
+@keyframes aparecer{
+    0%{opacity: 0;}
+}
+
+

@@ -5,6 +5,8 @@ npm install ejs --save
 npm install body-parser --save
 npm install --save sequelize
 npm install --save mysql2
+npm install express-session connect-flash --save 
+npm install flash --save
 
 
 Tecnologias usadas:
