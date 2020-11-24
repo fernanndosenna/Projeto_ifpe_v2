@@ -6,6 +6,8 @@ const Pergunta = require('./database/Pergunta')//tabela de pergunta
 //Database
 const Resposta = require("./database/Resposta")
 const Contato = require("./database/contato")
+const Usuario = require("./database/Usuario")
+const bcrypt = require("bcryptjs")
 
 
 connection.authenticate()
@@ -117,6 +119,31 @@ app.post("/salvarcontato", (req,res)=>{ //receber dados do formulario de contato
         res.send("Seus dados e mensagens ja foram enviadas, aguarde o nosso retorno!")        
     }).catch((err)=>{
         console.log(err)
+    })
+})
+
+app.get("/registro", (req,res)=>{ //renderizando um formulario de registro
+    res.render('usuarios/registro')
+})
+
+app.post("/registro", (req,res)=>{
+    Usuario.findOne({email: req.body.email}).then((usuario)=>{
+        if(usuario){
+            console.log("Email já existe")
+            res.redirect("/registro")
+        }else{
+        
+            Usuario.create({
+                nome: req.body.nome,
+                email: req.body.email,
+                senha: req.body.senha
+            })
+
+
+        }
+    }).catch((err)=>{
+        console.log(err)
+        res.redirect("/")
     })
 })
 
