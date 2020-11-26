@@ -28,6 +28,7 @@ img{
     "apresentacao apresentacao apresentacao"
     "servicos servicos servicos"
     "parallax parallax parallax"
+    "conteudo conteudo conteudo"
     "time time time"
     "footer footer footer" 
     ;
@@ -41,6 +42,7 @@ img{
         "apresentacao apresentacao"
         "servicos servicos"
         "parallax parallax"
+        "conteudo conteudo"
         "time time"
         "footer footer" 
         
@@ -55,6 +57,7 @@ img{
         "apresentacao"
         "servicos"
         "parallax"
+        "conteudo"
         "time"
         "footer" 
         
@@ -65,7 +68,7 @@ img{
 /*header*/
 #header{
     grid-area: header;
-    padding: 30px;
+    padding:  30px;
     display: grid;
     grid-template-columns: 1fr auto;
     position: relative;
@@ -108,7 +111,7 @@ img{
     display: block;
     padding: 20px;
     color: rgb(110, 110, 110);
-    font-size: 1.7em;
+    font-size: 1.3rem;
     transition: 0.1s;
 }
 #header nav ul li{
@@ -357,6 +360,79 @@ img{
         height: 200px;
     }
 }
+/*conteudo*/
+#conteudo{
+    grid-area: conteudo;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 30px;
+    grid-gap: 50px;
+}
+#conteudo div h3{
+    color: rgb(109, 109, 109);
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+#conteudo div p{
+    color: rgb(109, 109, 109);
+    font-size: 1.1rem;
+
+}
+#conteudo div i{
+    font-size: 4rem;
+    color: rgba(73, 72, 145, 0.726);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    margin-bottom: 30px;
+}
+/*media do conteúdo*/
+@media (max-width: 1200px){
+    #conteudo{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 769px){
+    #conteudo{
+        grid-template-columns: 1fr;
+    }
+    #conteudo div h3{
+     
+        font-size: 1.1rem;
+      
+    }
+    #conteudo div p{
+        font-size: 0.8rem;
+    
+    }
+    #conteudo div i{
+        font-size: 3rem;
+       
+    }
+
+}
+/*parallax 2*/
+#parallax2{
+    width:100%;
+    height:500px;
+    background: url('../img/imagem-paralax2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-column:1/-1; /*vai pegar as coluna de ponta a ponta*/
+}
+/*media paralax*/
+@media (max-width: 1200px){
+    #parallax2{
+        height: 200px;
+    }
+}
+
+
+
 /*TIME*/
 #time{
     grid-template-columns: 1fr;
