@@ -122,8 +122,8 @@ app.post("/salvarcontato", (req,res)=>{ //receber dados do formulario de contato
 })
 
 
-app.listen(8080,()=>{
-    console.log('App rodando na porta 8080')
+app.listen(8082,()=>{
+    console.log('App rodando na porta 8082')
 })
 
 

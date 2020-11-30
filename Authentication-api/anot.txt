@@ -1,0 +1,8 @@
+npm init -y
+npm i koa koa-router @koa/cors koa-bodyparser boom fastest-validator sequelize sequelize-cli
+npm i sqlite3
+npm i -D nodemon
+npm i jsonwebtoken
+./node_modules/.bin/sequelize init
+npx sequelize model:generate --name User --attributes firstName:string,lastName:string,email:string,password:string
+npx sequelize db:migrate
